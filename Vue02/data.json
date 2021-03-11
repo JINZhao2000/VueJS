@@ -1,0 +1,20 @@
+{
+  "name": "user",
+  "age": 18,
+  "adult": true,
+  "address": {
+    "num": 1,
+    "name": "narbonne",
+    "city": "toulosue"
+  },
+  "links": [
+    {
+      "name": "my",
+      "url": "ftp://192.168.1.1"
+    },
+    {
+      "name": "my2",
+      "url": "http://localhost:8080/"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slot</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="vue">
+    <todo-list>
+        <todo-title slot="todo-title" :title="title"></todo-title>
+        <todo-item slot="todo-item" v-for="item in todoItems" :items="item"></todo-item>
+    </todo-list>
+</div>
+<script>
+    Vue.component("todo-list",{
+        template: '\
+            <div>\
+                <slot name="todo-title"></slot>\
+                <ul>\
+                    <slot name="todo-item"></slot>\
+                </ul>\
+            </div>'
+    })
+    Vue.component("todo-title",{
+        props: ['title'],
+        template: '<div>{{title}}</div>'
+    })
+    Vue.component("todo-item",{
+        props: ['items'],
+        template: '<li>{{items}}</li>'
+    })
+    let vm = new Vue({
+        el: "#vue",
+        data: {
+            title: "Book list",
+            todoItems: ['Java','Linux','MySQL']
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bi-bind</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="message"> {{message}}<br>
+    <hr>
+    <input type="radio" name="sex" value="homme" v-model="sex">Homme<br>
+    <input type="radio" name="sex" value="femme" v-model="sex">Femme<br>
+    <input type="radio" name="sex" value="null" v-model="sex">Null<br>
+    Resutlat : {{sex}}
+    <hr>
+    <select name="alphabet" id="alphabet" v-model="alphabet">
+        <option> </option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select><br>
+    Lettre: {{alphabet}}
+</div>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            message: "message",
+            checked: false,
+            sex: "",
+            alphabet: "V"
+        },
+
+    })
+</script>
+</body>
+</html>

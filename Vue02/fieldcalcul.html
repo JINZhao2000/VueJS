@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Field Calcul</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="vue">
+    <p>Current Time 1 {{currentTime1()}}</p>
+    <p>Current Time 1 {{currentTime2}}</p>
+</div>
+<script>
+    let vm = new Vue({
+        el: "#vue",
+        data: {
+            message: "hello"
+        },
+        methods: {
+            currentTime1: function () {
+                return Date.now();
+            }
+        },
+        computed: {
+            currentTime2: function () {
+                this.message;
+                return Date.now();
+            }
+        }
+    })
+</script>
+</body>
+</html>

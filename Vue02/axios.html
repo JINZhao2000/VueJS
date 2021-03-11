@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Axios</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="vue" v-cloak>
+    <div>{{info}}</div>
+    <a v-bind:href="info.links[0].url">Click</a>
+</div>
+<script>
+    let vm = new Vue({
+        el: "#vue",
+        data(){
+            return {
+                info:{
+                    name: null,
+                    age: 0,
+                    adult: false,
+                    address: {
+                        num: 0,
+                        name: null,
+                        city: null,
+                    },
+                    links: [
+                        {
+                            name: null,
+                            url: null
+                        }
+                    ]
+                }
+            }
+        },
+        mounted(){
+            axios.get('data.json').then(response => (this.info = response.data));
+        }
+    })
+</script>
+</body>
+</html>

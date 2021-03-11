@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Action</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="hello()">Click Me</button>
+</div>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            message: "hello"
+        },
+        methods: {
+            hello: function () {
+                alert(this.message);
+            }
+        }
+    })
+</script>
+</body>
+</html>

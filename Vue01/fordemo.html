@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1 v-for="(item,index) in items">
+        {{item.message+'--'+index}}
+    </h1>
+</div>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            items: [{message: 'A'},{message: 'B'},{message: 'C'}]
+        }
+    })
+</script>
+</body>
+</html>
